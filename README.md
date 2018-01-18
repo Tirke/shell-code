@@ -7,9 +7,7 @@ Réalisation d'un shellcode sur Centos 7 et réalisation d’un payload bind_she
 La repository contient trois scripts permettant d'automatiser chaque processus (vous avez juste a lancer le script).
 Le troisième script nécessite l'utilisation de la distribution Linux Kali.
 
-## Premier exploit - utilisation manuelle
-
-### Prérequis
+## Prérequis
 
 Les différentes commandes sont nécessaires :
 
@@ -25,7 +23,9 @@ yum install nasm
 yum install gcc
 ```
 
-### Création d'un shellcode
+## Premier exploit - utilisation manuelle
+
+### Création du shellcode
 
 Créer un fichier ".asm" avec le code assembleur.
 Pour exemple, le code d'un fichier hello.asm permettant d'afficher "Bonjour la SID" :
@@ -117,6 +117,8 @@ On obtient le résultat suivant :
 Bonjour la SID#
 ```
 
+### Lancement du script
+
 Le script hello-exploit.sh exécute automatiquement toutes ces étapes :
 
 ```bash
@@ -124,6 +126,8 @@ Le script hello-exploit.sh exécute automatiquement toutes ces étapes :
 ```
 
 ## Deuxième exploit - ajouter un utilisateur root
+
+### Création manuelle
 
 Créer un fichier adduser.c contenant le shellcode :
 
@@ -263,8 +267,7 @@ Add root user with password:
                         "\x48\x31\xc0"                                   /* xor    %rax,%rax */
                         "\xb0\x3c"                                       /* mov    $0x3c,%al */
                         "\x0f\x05";                                      /* syscall */
- 
- 
+                        
 int main(void)
 {
         fprintf(stdout,"Length: %d\n",strlen(SC));
@@ -286,6 +289,8 @@ On obtient donc un fichier "a.out" que l'on peut exécuter :
 ```
 
 On a alors ajouté l'utilisateur "shell-storm" avec le mot de passe "leet"
+
+### Execution avec le script
 
 Le script root-exploit.sh exécute automatiquement toutes ces étapes :
 
