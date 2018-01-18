@@ -5,8 +5,7 @@
 # janv, 2018
 
 # Installation des librairies necéssaires
-#yum install nasm
-#yum install gcc
+yum install -y nasm gcc
 
 # Création du code assembleur
 echo "[SECTION .text]
