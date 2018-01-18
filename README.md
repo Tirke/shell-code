@@ -25,7 +25,7 @@ yum install nasm
 yum install gcc
 ```
 
-## Création d'un shellcode
+### Création d'un shellcode
 
 Créer un fichier ".asm" avec le code assembleur.
 Pour exemple, le code d'un fichier hello.asm permettant d'afficher "Bonjour la SID" :
@@ -115,4 +115,18 @@ On obtient le résultat suivant :
 
 ```bash
 Bonjour la SID#
+```
+
+Le script hello-exploit.sh exécute automatiquement toutes ces étapes :
+
+```bash
+./hello-exploit.sh
+```
+
+## Deuxième exploit - ajouter un utilisateur root
+
+Lancer le script root-exploit.sh
+
+```bash
+./root-exploit.sh
 ```
