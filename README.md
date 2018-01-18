@@ -2,6 +2,11 @@
 
 Réalisation d'un shellcode sur Centos 7 et réalisation d’un payload bind_shell_tcp utilisant un shellcode qui sera exécuté dans un jar (Java).
 
+## Scripts
+
+La repository contient trois scripts permettant d'automatiser chaque processus (vous avez juste a lancer le script)
+Le troisième script nécessite l'utilisation de la distribution Linux Kali.
+
 ## Prérequis
 
 Les différentes commandes sont nécessaires :
