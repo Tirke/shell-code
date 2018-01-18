@@ -130,3 +130,5 @@ Lancer le script root-exploit.sh
 ```bash
 ./root-exploit.sh
 ```
+
+On a alors ajouté l'utilisateur "shell-storm" avec le mot de passe "leet"
