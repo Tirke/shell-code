@@ -7,7 +7,9 @@ Réalisation d'un shellcode sur Centos 7 et réalisation d’un payload bind_she
 La repository contient trois scripts permettant d'automatiser chaque processus (vous avez juste a lancer le script).
 Le troisième script nécessite l'utilisation de la distribution Linux Kali.
 
-## Prérequis
+## Premier exploit - utilisation manuelle
+
+### Prérequis
 
 Les différentes commandes sont nécessaires :
 
