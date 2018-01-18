@@ -92,6 +92,12 @@ int main(int argc, char **argv)
 }
 ```
 
+On compile le code :
+
+```bash
+gcc -fno-stack-protector -z execstack hello.c
+```
+
 On obtient donc un fichier "a.out" que l'on peut exécuter :
 
 ```bash

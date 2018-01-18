@@ -44,16 +44,17 @@ nasm -f elf hello.asm
 ld -m elf_i386 -s -o hello hello.o
 
 # Création du code c
-echo "char code[] =
+echo "char code[] = " > hello.c
 
-int main(int argc, char **argv)
+objdump -d hello|grep '[0-9a-f]:'|grep -v 'file'|cut -f2 -d:|cut -f1-6 -d' '|tr -s ' '|tr '\t' ' '|sed 's/ $//g'|sed 's/ /\\x/g'|paste -d '' -s |sed 's/^/"/'|sed 's/$/"/g' >> hello.c
+
+echo "int main(int argc, char **argv)
 {
         int (*func)();
         func = (int (*)()) code;
         (int)(*func)();
-}" > hello.c
+}" >> hello.c
 
-objdump -d hello|grep '[0-9a-f]:'|grep -v 'file'|cut -f2 -d:|cut -f1-6 -d' '|tr -s ' '|tr '\t' ' '|sed 's/ $//g'|sed 's/ /\\x/g'|paste -d '' -s |sed 's/^/"/'|sed 's/$/"/g'|sed -i -e 's/^code[] =.*$/code[] = \1/g' ./hello.c
 
 # Compilation
 gcc -fno-stack-protector -z execstack hello.c
