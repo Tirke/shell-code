@@ -46,7 +46,7 @@ ld -m elf_i386 -s -o hello hello.o
 # Création du code c
 echo "char code[] = " > hello.c
 
-objdump -d hello|grep '[0-9a-f]:'|grep -v 'file'|cut -f2 -d:|cut -f1-6 -d' '|tr -s ' '|tr '\t' ' '|sed 's/ $//g'|sed 's/ /\\x/g'|paste -d '' -s |sed 's/^/"/'|sed 's/$/"/g' >> hello.c
+objdump -d hello|grep '[0-9a-f]:'|grep -v 'file'|cut -f2 -d:|cut -f1-6 -d' '|tr -s ' '|tr '\t' ' '|sed 's/ $//g'|sed 's/ /\\x/g'|paste -d '' -s |sed 's/^/"/'|sed 's/$/";/g' >> hello.c
 
 echo "int main(int argc, char **argv)
 {
