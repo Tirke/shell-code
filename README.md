@@ -1,4 +1,4 @@
-# Shell code
+# Shellcode
 
 Réalisation d'un shellcode sur Centos 7 et réalisation d’un payload bind_shell_tcp utilisant un shellcode qui sera exécuté dans un jar (Java).
 
