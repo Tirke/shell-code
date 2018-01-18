@@ -86,9 +86,9 @@ char code[] =
 
 int main(int argc, char **argv)
 {
-        int (*func)();
-        func = (int (*)()) code;
-        (int)(*func)();
+        int (*func)(); // declare un pointeur de fonction pour une fonction, arguments non spécifiés et retourne un int
+        func = (int (*)()) code; // initialise le pointer en le faisant pointer sur code
+        (int)(*func)(); // appel de fonction
 }
 ```
 
