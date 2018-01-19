@@ -297,3 +297,7 @@ Le script root-exploit.sh exécute automatiquement toutes ces étapes :
 ```bash
 ./hello-exploit.sh
 ```
+
+## Dernier exploit - exploit complet avec un shell binded
+
+Le dernier exploit requiert l'utilisation de Kali Linux et d'une GUI, le script sert uniquement à créer le payload pour infecter la machine victime.
