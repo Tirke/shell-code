@@ -62,7 +62,7 @@ _start:
         db 'Bonjour la SID'
 ```
 
-Compiler et créer un créer un exécutable :
+Compiler et créer un exécutable :
 
 ```bash
 nasm -f elf hello.asm
@@ -93,7 +93,7 @@ char code[] =
 
 int main(int argc, char **argv)
 {
-        int (*func)(); // declare un pointeur de fonction pour une fonction, arguments non spécifiés et retourne un int
+        int (*func)(); // déclare un pointeur de fonction pour une fonction, arguments non spécifiés et retourne un int
         func = (int (*)()) code; // initialise le pointer en le faisant pointer sur code
         (int)(*func)(); // appel de fonction
 }
